@@ -2,8 +2,6 @@ package com.veken.mvpdemo.ui.base;
 
 import com.trello.rxlifecycle2.LifecycleTransformer;
 
-import java.lang.ref.WeakReference;
-
 /**
  * @author Veken
  * @date on 2018/2/2 10:30

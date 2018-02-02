@@ -8,13 +8,9 @@ import android.text.TextUtils;
 import java.util.Locale;
 
 /**
- * 判断网络情况工具类
- * 
- * @Description:
- * @author:zhangqian
- * @see:
- * @since:
- * @Date:2014-6-17
+ * @author Veken
+ * @date on 2018/2/2 10:30
+ * @describe  判断网络情况
  */
 public class NetworkUtil {
 

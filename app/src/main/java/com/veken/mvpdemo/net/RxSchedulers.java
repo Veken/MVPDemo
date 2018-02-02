@@ -8,7 +8,9 @@ import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
 
 /**
- * 通用的Rx线程转换类
+ * @author Veken
+ * @date on 2018/2/2 10:30
+ * @describe  通用的RxJava线程转换类
  */
 public class RxSchedulers {
 

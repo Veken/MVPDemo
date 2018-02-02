@@ -13,8 +13,9 @@ import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 
 
 /**
- * Retrofit 初始化
- * Created Veken
+ * @author Veken
+ * @date on 2018/2/2 10:30
+ * @describe
  */
 public class RetrofitHandle {
 

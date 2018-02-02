@@ -1,11 +1,10 @@
 package com.veken.mvpdemo.ui.base;
 
 
-import java.lang.ref.WeakReference;
 
 /**
  * @author Veken
- * @date on 2018/1/31 11:30
+ * @date on 2018/2/2 10:30
  * @describe
  */
 

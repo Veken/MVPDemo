@@ -5,9 +5,9 @@ import io.reactivex.annotations.NonNull;
 import io.reactivex.disposables.Disposable;
 
 /**
- * desc:
- * author: Will .
- * date: 2017/9/2 .
+ * @author Veken
+ * @date on 2018/2/2 10:30
+ * @describe
  */
 public abstract class BaseObserver<T> implements Observer<T> {
 
