@@ -9,19 +9,20 @@ import java.lang.ref.WeakReference;
  * @describe
  */
 
-public class BasePresenter<T> {
+public class BasePresenter<T extends BaseContract.BaseView> implements BaseContract.BasePresenter<T> {
 
     //1.View层的引用
-    protected WeakReference<T> mRefView;
+    protected T mView;
 
     //进行绑定
     public void attachView(T view) {
-        mRefView = new WeakReference<T>(view);
+        this.mView = view;
     }
 
-    //进行解绑
-    public void detachView(T View) {
-        mRefView.clear();
+    @Override
+    public void detachView() {
+        if (mView != null) {
+            mView = null;
+        }
     }
-
 }

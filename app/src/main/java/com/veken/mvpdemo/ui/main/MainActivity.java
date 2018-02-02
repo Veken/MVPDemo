@@ -9,19 +9,20 @@ import com.veken.mvpdemo.R;
 import com.veken.mvpdemo.bean.HotMovieBean;
 import com.veken.mvpdemo.ui.adapter.CommonAdapter;
 import com.veken.mvpdemo.ui.base.BaseActivity;
-import com.veken.mvpdemo.ui.main.presenter.TestPresenter;
+import com.veken.mvpdemo.ui.main.contract.HotMovieContract;
+import com.veken.mvpdemo.ui.main.presenter.HotMoviePresenter;
 import com.veken.mvpdemo.utils.ToastUtil;
 
 import java.util.List;
 
 import butterknife.Bind;
 
-public class MainActivity extends BaseActivity<TestView,TestPresenter<TestView>> implements TestView {
+
+public class MainActivity extends BaseActivity<HotMoviePresenter> implements HotMovieContract.View {
 
 
     @Bind(R.id.recycler_view)
     RecyclerView recyclerView;
-
 
     @Override
     protected int layoutId() {
@@ -30,32 +31,30 @@ public class MainActivity extends BaseActivity<TestView,TestPresenter<TestView>>
 
     @Override
     protected void initData() {
-        presenter.fetch();
+        presenter.getData();
     }
 
+    /**
+     * 初始化Presenter
+     * @return
+     */
     @Override
-    protected TestPresenter<TestView> createPresenter() {
-        return new TestPresenter<>();
+    protected HotMoviePresenter createPresenter() {
+        return new HotMoviePresenter();
     }
 
-    @Override
-    public void showLoading() {
-        showLoadingDialog();
-    }
 
     @Override
-    public void showData(HotMovieBean hotMovieBean) {
-        dialog.dismiss();
-        List<HotMovieBean.SubjectsBean> subjects = hotMovieBean.getSubjects();
+    public void loadData(HotMovieBean hotMovieBeen) {
+        List<HotMovieBean.SubjectsBean> subjects = hotMovieBeen.getSubjects();
         CommonAdapter adapter = new CommonAdapter(subjects);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);
         adapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-                ToastUtil.toastShort(MainActivity.this,position + "");
+                ToastUtil.toastShort(position + "");
             }
         });
     }
-
 }

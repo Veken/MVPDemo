@@ -12,7 +12,7 @@ import retrofit2.http.Query;
  * @describe
  */
 
-public interface Service {
+public interface HotMovieService {
 
     /**
 //     * 豆瓣热映电影，每日更新

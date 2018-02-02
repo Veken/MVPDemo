@@ -1,0 +1,42 @@
+package com.veken.mvpdemo.ui.main.presenter;
+
+import com.veken.mvpdemo.bean.HotMovieBean;
+import com.veken.mvpdemo.net.BaseObserver;
+import com.veken.mvpdemo.net.RetrofitHandle;
+import com.veken.mvpdemo.net.RxSchedulers;
+import com.veken.mvpdemo.net.HotMovieService;
+import com.veken.mvpdemo.ui.base.BasePresenter;
+import com.veken.mvpdemo.ui.main.contract.HotMovieContract;
+
+/**
+ * @author Veken
+ * @date on 2018/1/31 14:49
+ * @describe 表示层
+ */
+
+public class HotMoviePresenter extends BasePresenter<HotMovieContract.View> implements HotMovieContract.Presenter {
+    HotMovieService hotMovieService;
+
+    @Override
+    public void getData() {
+        if (hotMovieService == null) {
+            hotMovieService = RetrofitHandle.getInstance().retrofit.create(HotMovieService.class);
+        }
+        hotMovieService.fetchMovieTop250(0, 30)
+                .compose(RxSchedulers.<HotMovieBean>applySchedulers())
+                .compose(mView.<HotMovieBean>bindToLife())
+                .subscribe(new BaseObserver<HotMovieBean>() {
+                    @Override
+                    public void onSucess(HotMovieBean hotMovieBean) {
+                        mView.loadData(hotMovieBean);
+                        //如果不想要加载成功后的显示，比如弹一个toast，可以取消
+                        mView.showSuccess();
+                    }
+
+                    @Override
+                    public void onFail(Throwable e) {
+                        mView.showFaild();
+                    }
+                });
+    }
+}
