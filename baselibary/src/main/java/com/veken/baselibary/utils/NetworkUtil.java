@@ -1,4 +1,4 @@
-package com.veken.mvpdemo.utils;
+package com.veken.baselibary.utils;
 
 import android.content.Context;
 import android.net.ConnectivityManager;

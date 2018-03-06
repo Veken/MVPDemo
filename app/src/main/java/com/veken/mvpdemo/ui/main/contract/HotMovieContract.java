@@ -1,7 +1,7 @@
 package com.veken.mvpdemo.ui.main.contract;
 
+import com.veken.baselibary.ui.base.BaseContract;
 import com.veken.mvpdemo.bean.HotMovieBean;
-import com.veken.mvpdemo.ui.base.BaseContract;
 
 
 /**

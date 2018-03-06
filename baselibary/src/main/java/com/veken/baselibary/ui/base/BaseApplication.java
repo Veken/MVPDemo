@@ -1,4 +1,4 @@
-package com.veken.mvpdemo.ui.base;
+package com.veken.baselibary.ui.base;
 
 import android.app.Application;
 

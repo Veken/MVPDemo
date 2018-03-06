@@ -1,11 +1,11 @@
 package com.veken.mvpdemo.ui.main.presenter;
 
+import com.veken.baselibary.net.BaseObserver;
+import com.veken.baselibary.net.RetrofitHandle;
+import com.veken.baselibary.net.RxSchedulers;
+import com.veken.baselibary.ui.base.BasePresenter;
 import com.veken.mvpdemo.bean.HotMovieBean;
-import com.veken.mvpdemo.net.BaseObserver;
-import com.veken.mvpdemo.net.RetrofitHandle;
-import com.veken.mvpdemo.net.RxSchedulers;
 import com.veken.mvpdemo.net.HotMovieService;
-import com.veken.mvpdemo.ui.base.BasePresenter;
 import com.veken.mvpdemo.ui.main.contract.HotMovieContract;
 
 /**

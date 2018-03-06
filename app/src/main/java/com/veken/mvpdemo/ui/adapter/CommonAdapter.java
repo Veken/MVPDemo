@@ -26,7 +26,7 @@ public class CommonAdapter extends BaseQuickAdapter<HotMovieBean.SubjectsBean, B
 
     @Override
     protected void convert(BaseViewHolder holder, HotMovieBean.SubjectsBean item) {
-        Glide.with(mContext).load(item.getImages().getLarge()).
+        Glide.with(mContext).load(item.getImages().getUrl()).
                 placeholder(R.mipmap.beautiful_girl).into((ImageView) holder.getView(R.id.iv_icon));
         holder.setText(R.id.tv_title,item.getTitle());
         holder.setText(R.id.tv_detail,item.getYear());

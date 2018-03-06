@@ -1,4 +1,4 @@
-package com.veken.mvpdemo.ui.base;
+package com.veken.baselibary.ui.base;
 
 
 
@@ -18,6 +18,7 @@ public class BasePresenter<T extends BaseContract.BaseView> implements BaseContr
         this.mView = view;
     }
 
+    //解绑
     @Override
     public void detachView() {
         if (mView != null) {

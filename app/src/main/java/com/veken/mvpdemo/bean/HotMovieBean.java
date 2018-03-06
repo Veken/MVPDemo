@@ -1,5 +1,7 @@
 package com.veken.mvpdemo.bean;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.io.Serializable;
 import java.util.List;
 
@@ -243,7 +245,19 @@ public class HotMovieBean implements Serializable {
              */
 
             private String small;
-            private String large;
+
+
+            public String getUrl() {
+                return url;
+            }
+
+            public void setUrl(String url) {
+                this.url = url;
+            }
+
+            @SerializedName("large")
+            private String url;
+
             private String medium;
 
             public String getSmall() {
@@ -254,13 +268,6 @@ public class HotMovieBean implements Serializable {
                 this.small = small;
             }
 
-            public String getLarge() {
-                return large;
-            }
-
-            public void setLarge(String large) {
-                this.large = large;
-            }
 
             public String getMedium() {
                 return medium;

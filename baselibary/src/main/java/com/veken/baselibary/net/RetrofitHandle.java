@@ -1,7 +1,9 @@
-package com.veken.mvpdemo.net;
+package com.veken.baselibary.net;
 
 
-import com.veken.mvpdemo.BuildConfig;
+
+
+import com.veken.baselibary.BuildConfig;
 
 import java.util.concurrent.TimeUnit;
 

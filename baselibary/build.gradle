@@ -1,0 +1,47 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode rootProject.ext.versionCode
+        versionName rootProject.ext.versionName
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile "com.android.support:appcompat-v7:${supportLibraryVersion}"
+    //rxjava
+    compile "io.reactivex.rxjava2:rxjava:${rxjava}"
+    compile "io.reactivex.rxjava2:rxandroid:${rxandroid}"
+    compile "com.jakewharton.rxbinding2:rxbinding:${rxbinding}"
+    compile "com.trello.rxlifecycle2:rxlifecycle:${rxlifecycle}"
+    compile "com.trello.rxlifecycle2:rxlifecycle-components:${rxlifecycleComponents}"
+    //http
+    compile "com.squareup.retrofit2:retrofit:${retrofit}"
+    compile "com.squareup.retrofit2:converter-scalars:${converterScalars}"
+    compile "com.squareup.retrofit2:converter-gson:${converterGson}"
+    compile "com.squareup.retrofit2:adapter-rxjava2:${adapterRxjava2}"
+    compile "com.squareup.okhttp3:okhttp:${okhttp}"
+    compile "com.google.code.gson:gson:${gson}"
+    compile "com.squareup.okhttp3:logging-interceptor:${loggingInterceptor}"
+    //Logger
+    compile "com.orhanobut:logger:${log}"
+    compile "com.jakewharton:butterknife:${butterknife}"
+    compile "com.github.bumptech.glide:glide:${glide}"
+    compile "com.github.CymChad:BaseRecyclerViewAdapterHelper:${BaseRecyclerViewAdapterHelper}"
+    compile "com.android.support:recyclerview-v7:${supportLibraryVersion}"
+}

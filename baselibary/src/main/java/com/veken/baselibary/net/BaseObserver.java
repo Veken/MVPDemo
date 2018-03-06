@@ -1,4 +1,4 @@
-package com.veken.mvpdemo.net;
+package com.veken.baselibary.net;
 
 import io.reactivex.Observer;
 import io.reactivex.annotations.NonNull;

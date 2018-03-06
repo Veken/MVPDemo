@@ -1,14 +1,14 @@
-package com.veken.mvpdemo.ui.base;
+package com.veken.baselibary.ui.base;
 
 import android.app.Dialog;
-import android.support.annotation.Nullable;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 
 import com.trello.rxlifecycle2.LifecycleTransformer;
 import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
-import com.veken.mvpdemo.utils.DialogLoading;
-import com.veken.mvpdemo.utils.NetworkUtil;
-import com.veken.mvpdemo.utils.ToastUtil;
+import com.veken.baselibary.utils.DialogLoading;
+import com.veken.baselibary.utils.NetworkUtil;
+import com.veken.baselibary.utils.ToastUtil;
 
 import butterknife.ButterKnife;
 

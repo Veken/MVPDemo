@@ -1,7 +1,8 @@
-package com.veken.mvpdemo.utils;
+package com.veken.baselibary.utils;
 import android.widget.Toast;
 
-import com.veken.mvpdemo.ui.base.BaseApplication;
+import com.veken.baselibary.ui.base.BaseApplication;
+
 
 /**
  * @author Veken

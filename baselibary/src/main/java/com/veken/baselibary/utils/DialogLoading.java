@@ -1,15 +1,8 @@
-package com.veken.mvpdemo.utils;
+package com.veken.baselibary.utils;
 
 import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Context;
-import android.content.DialogInterface;
-import android.view.Gravity;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.Window;
-
-import com.veken.mvpdemo.R;
 
 /**
  * @author Veken

@@ -5,24 +5,24 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
+import com.veken.baselibary.ui.base.BaseActivity;
+import com.veken.baselibary.utils.ToastUtil;
 import com.veken.mvpdemo.R;
 import com.veken.mvpdemo.bean.HotMovieBean;
 import com.veken.mvpdemo.ui.adapter.CommonAdapter;
-import com.veken.mvpdemo.ui.base.BaseActivity;
 import com.veken.mvpdemo.ui.main.contract.HotMovieContract;
 import com.veken.mvpdemo.ui.main.presenter.HotMoviePresenter;
-import com.veken.mvpdemo.utils.ToastUtil;
 
 import java.util.List;
 
 import butterknife.Bind;
-
 
 public class MainActivity extends BaseActivity<HotMoviePresenter> implements HotMovieContract.View {
 
 
     @Bind(R.id.recycler_view)
     RecyclerView recyclerView;
+
 
     @Override
     protected int layoutId() {
