@@ -110,7 +110,8 @@ public abstract class BaseActivity<T extends BaseContract.BasePresenter> extends
 
     /**
      * 绑定RxJava的生命周期,类似于以前的Disposable或者是CompositeDisposable切断联系，避免造成内存泄漏
-     *
+     * CompositeDisposable是Disposable的容器，需要切断一个联系，就把Disposable添加到CompositeDisposable中，
+     * 在退出的时候调用CompositeDisposable.clear()，清楚所有
      * @param <T>
      * @return
      */
