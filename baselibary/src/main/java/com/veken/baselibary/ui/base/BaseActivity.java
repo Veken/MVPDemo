@@ -3,17 +3,15 @@ package com.veken.baselibary.ui.base;
 import android.app.Dialog;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.app.AppCompatActivity;
 
-import com.trello.rxlifecycle2.LifecycleTransformer;
-import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
 import com.veken.baselibary.utils.DialogLoading;
 import com.veken.baselibary.utils.NetworkUtil;
 import com.veken.baselibary.utils.ToastUtil;
 
-import butterknife.ButterKnife;
 
 
-public abstract class BaseActivity<T extends BaseContract.BasePresenter> extends RxAppCompatActivity implements BaseContract.BaseView {
+public abstract class BaseActivity<T extends BaseContract.BasePresenter> extends AppCompatActivity implements BaseContract.BaseView {
 
     //表示层的引用
     @Nullable
@@ -21,12 +19,16 @@ public abstract class BaseActivity<T extends BaseContract.BasePresenter> extends
 
     protected Dialog dialog;
 
+//    private Unbinder unbinder;
+
+    protected boolean showDialog = true;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(layoutId());
-        ButterKnife.bind(this);
+//        unbinder =  ButterKnife.bind(this);
         presenter = createPresenter();
         if (presenter != null) {
             presenter.attachView(this);
@@ -38,7 +40,9 @@ public abstract class BaseActivity<T extends BaseContract.BasePresenter> extends
         }
         //加载数据
         initData();
-        dialog = DialogLoading.getLoadingDialog(this);
+        if(showDialog){
+            dialog = DialogLoading.getLoadingDialog(this);
+        }
     }
 
 
@@ -102,7 +106,7 @@ public abstract class BaseActivity<T extends BaseContract.BasePresenter> extends
 
     @Override
     public void showLoading() {
-        if (dialog != null) {
+        if (dialog != null&&showDialog) {
             dialog.show();
         }
     }
@@ -112,13 +116,9 @@ public abstract class BaseActivity<T extends BaseContract.BasePresenter> extends
      * 绑定RxJava的生命周期,类似于以前的Disposable或者是CompositeDisposable切断联系，避免造成内存泄漏
      * CompositeDisposable是Disposable的容器，需要切断一个联系，就把Disposable添加到CompositeDisposable中，
      * 在退出的时候调用CompositeDisposable.clear()，清楚所有
-     * @param <T>
+     * @param
      * @return
      */
-    @Override
-    public <T> LifecycleTransformer<T> bindToLife() {
-        return this.bindToLifecycle();
-    }
 
     @Override
     protected void onDestroy() {
@@ -126,6 +126,6 @@ public abstract class BaseActivity<T extends BaseContract.BasePresenter> extends
         if (presenter != null) {
             presenter.detachView();
         }
-        ButterKnife.unbind(this);
+//        unbinder.unbind();
     }
 }

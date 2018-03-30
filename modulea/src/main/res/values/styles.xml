@@ -1,0 +1,16 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="modulea_AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/module1_colorPrimary</item>
+        <item name="colorPrimaryDark">@color/module1_colorPrimaryDark</item>
+        <item name="colorAccent">@color/module1_colorAccent</item>
+    </style>
+
+    <style name="modulea_AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+</resources>

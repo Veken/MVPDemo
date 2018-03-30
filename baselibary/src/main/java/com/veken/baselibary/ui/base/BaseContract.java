@@ -32,13 +32,5 @@ public interface BaseContract {
 
         //重试
         void onRetry();
-
-        /**
-         * 绑定生命周期
-         *
-         * @param <T>
-         * @return
-         */
-        <T> LifecycleTransformer<T> bindToLife();
     }
 }

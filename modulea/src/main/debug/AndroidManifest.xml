@@ -1,0 +1,19 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.veken.modulea">
+
+    <application
+        android:allowBackup="true"
+        android:label="@string/moduleA_app_name"
+        android:supportsRtl="true"
+        android:theme="@style/modulea_AppTheme">
+        <activity android:name=".ui.main.MovieActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+    </application>
+
+</manifest>

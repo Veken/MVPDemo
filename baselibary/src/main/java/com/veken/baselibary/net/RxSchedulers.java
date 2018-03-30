@@ -23,7 +23,7 @@ public class RxSchedulers {
     };
 
 
-    public static <T> ObservableTransformer<T, T> applySchedulers() {
-        return (ObservableTransformer<T, T>) schedulersTransformer;
+    public static  ObservableTransformer applySchedulers() {
+        return (ObservableTransformer) schedulersTransformer;
     }
 }

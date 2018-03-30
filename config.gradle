@@ -2,7 +2,7 @@ ext {
 
     // SDK And Tools
     // 最低支持Android版本
-    minSdkVersion = 14
+    minSdkVersion = 15
     // 目标版本
     targetSdkVersion = 25
     // 用于编译的SDK版本
@@ -22,7 +22,7 @@ ext {
     MINIFY_DISABLED = false
 
     //butterknife
-    butterknife = '7.0.0'
+    butterknife = '8.5.1'
 
     //rxjava
     rxjava = '2.0.6'
