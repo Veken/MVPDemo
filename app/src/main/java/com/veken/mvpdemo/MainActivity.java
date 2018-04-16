@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void moduleB(View view) {
-        ARouter.getInstance().build(RouterCommonUtil.MODUlE_B_ACTIVITY).navigation(this,100);
+        ARouter.getInstance().build(RouterCommonUtil.MODUlE_B_ACTIVITY)
+                .withInt("num",100).navigation();
     }
 }
